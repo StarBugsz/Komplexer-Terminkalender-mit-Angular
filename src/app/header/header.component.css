@@ -1,0 +1,27 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  transition: background-color 0.3s;
+}
+.example-icon:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+.marginleft1 {
+  margin-left: 200px;
+}
+
+.marginleft2 {
+  margin-left: 20px;
+}
+
+.marginleft3 {
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
+}

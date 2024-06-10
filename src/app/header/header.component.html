@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Kalender</span>
+    <button mat-flat-button color="primary marginleft1">Heute</button>
+    <button mat-icon-button aria-label class="marginleft2">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Example icon-button with settings icon">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
+
+    <span class="flex-spacer"></span>
+
+    <form class="marginleft3">
+        <mat-form-field>
+            
+            <mat-select [(ngModel)]="selectedValue" name="food">
+                @for (time_period of time_periods; track time_period) {
+                <mat-option [value]="time_period.value">{{time_period.viewValue}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+    </form>
+
+</mat-toolbar>
