@@ -1,7 +1,7 @@
 <div>
-    <app-header></app-header>
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
     <div class="flex">
-        <app-sidebar></app-sidebar>
+        <app-sidebar *ngIf="isSidebarVisible"></app-sidebar>
         <app-calendar class="calendar-container"></app-calendar>
     </div>
 </div>

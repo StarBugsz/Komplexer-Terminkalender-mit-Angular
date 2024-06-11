@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -28,11 +28,17 @@ interface time_period {
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  selectedValue: string="month" ;
-
+  selectedValue: string = 'month';
+  isSidebarVisible = true;
   time_periods: time_period[] = [
-    {value: 'day', viewValue: 'Tag'},
-    {value: 'week', viewValue: 'Woche'},
-    {value: 'month', viewValue: 'Monat'},
+    { value: 'day', viewValue: 'Tag' },
+    { value: 'week', viewValue: 'Woche' },
+    { value: 'month', viewValue: 'Monat' },
   ];
+
+  @Output() toggleSidebar = new EventEmitter<void>();
+
+  ToggleSidebar() {
+    this.toggleSidebar.emit();
+  }
 }
