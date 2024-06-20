@@ -13,3 +13,11 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.timepicker-overlay{
+  z-index: 1000000000 !important;
+}
+
+.timepicker-backdrop-overlay{
+  z-index: 1000000000 !important;
+}

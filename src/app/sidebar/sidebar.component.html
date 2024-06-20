@@ -1,10 +1,23 @@
-<mat-card class="demo-inline-calendar-card">
-  <mat-calendar [(selected)]="selected"></mat-calendar>
-</mat-card>
+<div class="sidebar">
+  <div class="container">
+    <button mat-raised-button color="primary" (click)="createEvent()">Ereignis hinzufügen</button>
+  </div>
 
-<div class="container">
-  <h1 class="head">Termine heute:</h1>
-  <ul>
-    <li>test</li>
-  </ul>
+  <mat-card class="demo-inline-calendar-card">
+    <mat-calendar [(selected)]="selected"></mat-calendar>
+  </mat-card>
+
+  <div class="container">
+    <h1 class="head">Termine heute:</h1>
+    <mat-list>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-list>
+    
+  </div>
+
+  
 </div>

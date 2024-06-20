@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 import { CalendarEvent } from 'angular-calendar';
 import { addHours } from 'date-fns';
 
@@ -8,11 +8,8 @@ import { addHours } from 'date-fns';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
-  viewDate: Date = new Date();
-  events: CalendarEvent[] = [
-    {
-      start: addHours(new Date(), 1),
-      title: 'An event'
-    }
-  ];
+  @Input() view: string = '';  
+  @Input() viewDate: Date = new Date();
+  @Input() events = [];
+
 }

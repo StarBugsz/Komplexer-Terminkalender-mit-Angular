@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Calendar';
 
+  view: string= "month";  
+  viewDate: Date = new Date();
+  events = [];
   isSidebarVisible = true;
+
 
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
+  }
+
+  changeView1(view: string) {
+    this.view = view;
   }
 }
