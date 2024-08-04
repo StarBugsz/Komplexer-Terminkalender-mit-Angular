@@ -1,21 +1,22 @@
 <div class="container">
-  <button mat-icon-button>
+  <div class="close-icon">
     <mat-icon (click)="closeDialog()">close</mat-icon>
-  </button>
+  </div>
   <mat-form-field class="example-form-field">
     <mat-label>Titel hinzufügen</mat-label>
-    <input matInput type="text" [(ngModel)]="value">
-    @if (value) {
-    <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
+    <input type="string" matInput [formControl]="titleFormControl" [(ngModel)]="eventname"/>
+    @if (titleFormControl.hasError("required")) {
+      <mat-error>Bitte gebe einen Titel ein</mat-error>
     }
   </mat-form-field>
 
   <div>
     <mat-form-field class="example-full-width">
       <mat-label>Datum auswählen</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="date" [formControl]="dateFormControl">
+      @if (dateFormControl.hasError("required")) {
+        <mat-error>Bitte wähle ein Datum aus</mat-error>
+      }
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker">
         <mat-icon matDatepickerToggleIcon>event</mat-icon>
@@ -28,20 +29,26 @@
     <div class="example-container">
       <mat-form-field appearance="fill">
         <mat-label>Wähle eine Startzeit</mat-label>
-        <input matInput [ngxTimepicker]="startPicker" placeholder="HH:MM" [(ngModel)]="startTime">
+        <input matInput [ngxTimepicker]="startPicker" placeholder="HH:MM" [(ngModel)]="startTime" [formControl]="startTimeFormControl">
+        @if (startTimeFormControl.hasError("required") || error) {
+          <mat-error>Bitte wähle eine Startzeit aus</mat-error>
+        }
         <mat-hint>hh:mm</mat-hint>
         <ngx-material-timepicker #startPicker></ngx-material-timepicker>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Wähle eine Endzeit</mat-label>
-        <input matInput [ngxTimepicker]="endPicker" placeholder="HH:MM" [(ngModel)]="endTime">
+        <input matInput [ngxTimepicker]="endPicker" placeholder="HH:MM" [(ngModel)]="endTime" [formControl]="endTimeFormControl">
+        @if (endTimeFormControl.hasError("required")) {
+          <mat-error>Bitte wähle eine Endzeit aus</mat-error>
+        }
         <mat-hint>hh:mm</mat-hint>
         <ngx-material-timepicker #endPicker></ngx-material-timepicker>
       </mat-form-field>
     </div>
   </div>
 
-  <button mat-raised-button color="primary" (click)="closeDialog()">Speichern</button>
+  <button mat-raised-button color="primary" (click)="createEvent()">Speichern</button>
 
 </div>

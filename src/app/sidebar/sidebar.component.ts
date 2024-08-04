@@ -33,6 +33,7 @@ export class SidebarComponent {
 
   createEvent() {
     this.dialog.open(ModaldialogComponent);
+    
   }
 }
 

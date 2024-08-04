@@ -4,6 +4,6 @@ export interface Event {
     id: number;
     title: string;
     date: Date;
-    startTime: Time;
-    endTime: Time;
+    startTime: string;
+    endTime: string;
 }
