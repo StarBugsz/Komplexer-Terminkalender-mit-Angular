@@ -4,7 +4,7 @@
   </div>
 
   <mat-card class="demo-inline-calendar-card">
-    <mat-calendar [(selected)]="selected"></mat-calendar>
+    <mat-calendar [(selected)]="selected" (selectedChange)="selectDatepickerDate($event)"></mat-calendar>
   </mat-card>
 
   <div class="container">
@@ -16,8 +16,6 @@
       <mat-divider></mat-divider>
       <mat-list-item>Item 3</mat-list-item>
     </mat-list>
-    
-  </div>
 
-  
+  </div>
 </div>

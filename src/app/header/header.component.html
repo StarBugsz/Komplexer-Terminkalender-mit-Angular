@@ -4,13 +4,17 @@
         <mat-icon>menu</mat-icon>
     </button>
     <span>Kalender</span>
-    <button mat-flat-button color="primary marginleft1">Heute</button>
-    <button mat-icon-button aria-label class="marginleft2">
+    <button mat-flat-button color="primary marginleft1" (click)="todaysDate()">Heute</button>
+
+    <button mat-icon-button aria-label class="" (click)="previousDate()">
         <mat-icon>chevron_left</mat-icon>
     </button>
-    <button mat-icon-button aria-label="Example icon-button with settings icon">
+    <button mat-icon-button aria-label="Example icon-button with settings icon" (click)="nextDate()">
         <mat-icon>chevron_right</mat-icon>
     </button>
+    
+    <p *ngIf="selectedValue === 'month' || selectedValue === 'week'" class="marginleft2 margintop">{{currentMonthasString}} {{currentYear}}</p>
+    <p *ngIf="selectedValue === 'day'" class="marginleft2 margintop">{{currentDay}}</p>
 
     <span class="flex-spacer"></span>
 

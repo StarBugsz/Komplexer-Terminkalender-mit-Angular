@@ -10,7 +10,7 @@
 }
 
 .marginleft1 {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .marginleft2 {
@@ -20,6 +20,11 @@
 .marginleft3 {
   margin-right: 30px;
   margin-top: 20px;
+}
+
+.margintop {
+  margin-top: 10px;
+  width: 160px;
 }
 
 .flex-spacer {
